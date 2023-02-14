@@ -1,0 +1,39 @@
+Number Star Pattern
+/*
+Print the following pattern for given number of rows.
+Input format :
+
+Line 1 : N (Total number of rows)
+
+Sample Input :
+   5
+Sample Output :
+1234554321
+1234**4321
+123****321
+12******21
+1********1
+*/
+
+import java.util.Scanner;
+
+public class Main {
+public static void main(String[] args) {
+Scanner input = new Scanner(System.in);
+int n = input.nextInt();
+    for(int i = 1; i <= n; i++){
+        // print numbers from 1 to n-i+1
+        for(int j = 1; j <= n-i+1; j++){
+            System.out.print(j);
+        }
+        // print stars
+        for(int k = 1; k <= 2*(i-1); k++){
+            System.out.print("*");
+        }
+        // print numbers from n-i+1 to 1
+        for(int l = n-i+1; l >= 1; l--){
+            System.out.print(l);
+        }
+        System.out.println();
+    }
+}
